@@ -1,5 +1,6 @@
 require('dotenv').config()
 const { Client, IntentsBitField } = require('discord.js')
+import { Message } from "discord.js"
 
 
 const client = new Client({
@@ -11,11 +12,11 @@ const client = new Client({
     ]
 })
 
-client.on('ready', (c) => {
+client.on('ready', (c: typeof Client) => {
     console.log(`${c.user.username} is gonna do the thing.`)
 })
 
-client.on('messageCreate', (message) => {
+client.on('messageCreate', (message: Message) => {
     console.log(message.content)
     if (message.author.bot) {
         return;
@@ -25,6 +26,10 @@ client.on('messageCreate', (message) => {
     if (message.author.id === '138806957891911680') {
         
         message.reply('WARNING, Anthony Kim is a known criminal. lcys')
+    }
+
+    if (message.author.id === '116806592220889088') {
+        message.reply('Nice message Leo, keep it up!')
     }
 
     if (message.author.id === '186402825323020289') {
