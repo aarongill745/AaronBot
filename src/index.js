@@ -21,6 +21,10 @@ client.on('messageCreate', (message) => {
         return;
     }
     
+    if (message.author.id === 'anthony.#7946') {
+        message.reply('WARNING, this user is a known pedophile')
+    }
+
     if (message.content  === 'hello') {
         message.reply('Sup bitch')
     }
