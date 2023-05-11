@@ -27,7 +27,7 @@ client.on('messageCreate', (message) => {
     }
 
     if (message.author.id === '116806592220889088') {
-        message.reply('Nice message Leo, keep it up!')
+        message.reply('HAHAHAHAHAHAHAAHAHA')
     }
 
     if (message.author.id === '186402825323020289') {
