@@ -4,6 +4,7 @@
   "description": "Discord Bot that I created for fun.",
   "main": "index.js",
   "scripts": {
+    "postinstall": "tsc",
     "start": "ts-node src/index.ts",
     "start:dev": "ts-node-dev src/index.ts",
     "start:prod": "node dist/index.js",
