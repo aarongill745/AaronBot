@@ -20,9 +20,10 @@ client.on('messageCreate', (message) => {
     if (message.author.bot) {
         return;
     }
-    
+    console.log(message.author.id);
     if (message.author.id === 'anthony.#7946') {
-        message.reply('WARNING, this user is a known pedophile')
+        
+        message.reply('WARNING, this user is a known criminal')
     }
 
     if (message.content  === 'hello') {
