@@ -21,9 +21,14 @@ client.on('messageCreate', (message) => {
         return;
     }
     console.log(message.author.id);
+    
     if (message.author.id === '138806957891911680') {
         
         message.reply('WARNING, Anthony Kim is a known criminal. lcys')
+    }
+
+    if (message.author.id === '186402825323020289') {
+        message.reply('No one fucking cares bro')
     }
 
     if (message.content  === 'hello') {
