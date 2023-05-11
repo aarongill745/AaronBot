@@ -1,7 +1,6 @@
 import { Event } from "../Structures/Event";
 import { client } from "..";
 import { CommandInteractionOptionResolver } from "discord.js";
-import { ExtendedClient } from "../Structures/Client";
 import { ExtendedInteraction } from "../Typings/Command";
 
 

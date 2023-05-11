@@ -11,13 +11,14 @@ export class ExtendedClient extends Client {
     commands: Collection<string, CommandType> = new Collection();
 
     constructor() {
-        super({ intents: 32767});
+        super({ intents: 32767 });
     }
 
     start() {
         this.registerModules()
         this.login(process.env.Token);
     }
+
     async importFile(filePath: string) {
         return (await import(filePath))?.default
     }
@@ -35,6 +36,12 @@ export class ExtendedClient extends Client {
             slashCommands.push(command)
         })
 
+        this.on('ready', () => {
+            this.registerCommands({
+                commands: slashCommands,
+            })
+        })
+
         const eventFiles =  await globPromise(`${__dirname}/../Events/*{.ts,.js}`)
         console.log(eventFiles)
         eventFiles.forEach(async filePath => {
@@ -44,8 +51,12 @@ export class ExtendedClient extends Client {
 
     }
 
-    async registerCommands({ commands }: RegisterCommandsOptions) {
-        this.application?.commands.set(commands)
-        console.log('Registering global commands')
+    async registerCommands({ commands, guildId }: RegisterCommandsOptions) {
+        if (guildId) {
+            this.guilds.cache.get(guildId)?.commands.set(commands)
+        } else {
+            this.application?.commands.set(commands)
+            console.log('Registering global commands', commands)
+        }
     }
 }
