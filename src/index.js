@@ -21,7 +21,7 @@ client.on('messageCreate', (message) => {
         return;
     }
     console.log(message.author.id);
-    if (message.author.id === 'anthony.#7946') {
+    if (message.author.id === '138806957891911680') {
         
         message.reply('WARNING, this user is a known criminal')
     }
