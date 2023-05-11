@@ -1,2 +1,4 @@
 .env
 environment.d.ts
+node_modules
+dist
