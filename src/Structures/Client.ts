@@ -49,6 +49,13 @@ export class ExtendedClient extends Client {
             this.on(event.event, event.run)
         })
 
+        const eventDebug =  await globPromise(`${__dirname}/../Events/*/*{.ts,.js}`)
+        console.log(eventDebug)
+        eventDebug.forEach(async filePath => {
+            const event: Event<keyof ClientEvents> = await this.importFile(filePath)
+            this.on(event.event, event.run)
+        })
+
     }
 
     async registerCommands({ commands, guildId }: RegisterCommandsOptions) {
