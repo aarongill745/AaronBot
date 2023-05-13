@@ -7,6 +7,7 @@ import { Event } from "./Event";
 
 const globPromise = promisify(glob)
 
+// A simple comment for deployment
 export class ExtendedClient extends Client {
     commands: Collection<string, CommandType> = new Collection();
 
