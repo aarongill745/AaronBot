@@ -1,5 +1,5 @@
 import { Command } from "../../Structures/Command";
-
+    
 export default new Command ({
     name: "roll",
     description: "returns number between 0 and 100 (inclusive)",
